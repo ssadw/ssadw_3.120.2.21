@@ -2,7 +2,6 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h> //без этой библиотеки ругается на exit
-
 int main()
 {
 	int fd[2];
@@ -31,10 +30,12 @@ int main()
 	if (close(fd[0])<0)
 	{
 		printf("Can\'t close input stream\n");
+		exit(-1);
 	}
 	if (close(fd[1])<0)
         {
                 printf("Can\'t close output stream\n");
+		exit(-1);
 	}
 	return 0;
 }
