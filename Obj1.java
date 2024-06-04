@@ -4,6 +4,15 @@ class Avto
 	int vfuel;
 	double cons;
 	String type;
+	Avto(int kp, int vf, double c, String t) 
+	{
+		//System.out.println("Выполнился конструктор");
+		kpass = kp;
+		vfuel = vf;
+		cons = c;
+		type = t;
+	}
+
 	void range() 
 	{
 		System.out.println("Автомобиль проедет " + vfuel/cons*100 + " км, на полном баке");
@@ -17,14 +26,14 @@ class Avto
 		return cons*(range/100);
 	}
 }
-
 class Obj1
 {
 	public static void main(String args[])
 	{
-		Avto nissan = new Avto();
-		Avto ford = new Avto();
-		Avto bmw = new Avto();
+		Avto nissan = new Avto(7, 50, 12.5, "Минивэн");
+		Avto ford = new Avto(5, 40, 10.2, "Седан");
+		Avto bmw = new Avto(2, 20, 18.5, "Кабриолет");
+		/*
 		nissan.kpass = 7;
 		ford.kpass = 5;
 		bmw.kpass = 2;
@@ -37,6 +46,7 @@ class Obj1
 		nissan.cons = 12.5;
 		ford.cons = 10.2;
 		bmw.cons = 18.5;
+		*/
 		System.out.println("Информация об автомобиле \"Ниссан\"");
 		System.out.println("Количество пассажиров: " + nissan.kpass);
 		System.out.println("Емкость топливного бака: " + nissan.vfuel);
